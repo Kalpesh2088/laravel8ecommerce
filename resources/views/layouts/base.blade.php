@@ -22,6 +22,13 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/chosen.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/color-01.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"
+        integrity="sha512-CryKbMe7sjSCDPl18jtJI5DR5jtkUWxPXWaLCst6QjH8wxDexfRJic2WRmRXmstr2Y8SxDDWuBO6CQC6IE4KTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/6.2.7/js/tempus-dominus.min.js"
+        integrity="sha512-mlRnmlg3QB5kUlkHt2TkijTp/aTaXzSufbKrfMD1xfRhyiTKxLVgvNxSTwju35XtSZNxGlQ8G+EgGnAd9zJlWg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     @livewireStyles
 </head>
 
@@ -51,7 +58,7 @@
                         </div>
                         <div class="topbar-menu right-menu">
                             <ul>
-                                
+
                                 <li class="menu-item lang-menu menu-item-has-children parent">
                                     <a title="English" href="#"><span class="img label-before"><img
                                                 src="{{ asset('assets/images/lang-en.png') }}"
@@ -108,11 +115,21 @@
                                                             href="{{ route('admin.categories') }}">Category</a>
                                                     </li>
                                                     <li class="menu-item">
-                                                        <a title="products"
-                                                            href="{{ route('admin.product') }}">All Product</a>
+                                                        <a title="products" href="{{ route('admin.product') }}">All
+                                                            Product</a>
                                                     </li>
                                                     <li class="manu-item">
-                                                        <a title="Manage home slider" href="{{route('admin.homeslider')}}">Manage home slider</a>
+                                                        <a title="Manage home slider"
+                                                            href="{{ route('admin.homeslider') }}">Manage home slider</a>
+                                                    </li>
+                                                    <li class="manu-item">
+                                                        <a title="Manage home slider"
+                                                            href="{{ route('admin.home_categorise') }}">Maneg Home
+                                                            Categoey</a>
+                                                    </li>
+                                                    <li class="manu-item">
+                                                        <a title="Manage home slider"
+                                                            href="{{ route('admin.sale') }}">Sale Satting</a>
                                                     </li>
                                                     <li class="manu-item">
                                                         <a href="{{ route('logout') }}"
@@ -136,7 +153,7 @@
                                                         <a title="Dashboard"
                                                             href="{{ route('user.dashboard') }}">Dashboard</a>
                                                     </li>
-                                                    
+
                                                     <li class="manu-item">
                                                         <a href="{{ route('logout') }}"
                                                             onclick="event.preventDefault(); document.getElementById('logout-form').submit();">logout</a>
@@ -599,7 +616,12 @@
         <script src="{{ asset('assets/js/jquery.countdown.min.js') }}"></script>
         <script src="{{ asset('assets/js/jquery.sticky.js') }}"></script>
         <script src="{{ asset('assets/js/functions.js') }}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/6.2.7/js/tempus-dominus.js"
+            integrity="sha512-V8ISAL8eGy+JL1tfkBk8miHoaGECx2XjyHsMWQReF9ITfHJgZI+iyHbFUZyx1j+qxt/HkHorPXsOtLUOarVceQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         @livewireScripts
+        @stack('script')
     </body>
 
     </html>

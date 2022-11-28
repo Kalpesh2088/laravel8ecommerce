@@ -125,13 +125,14 @@
                                                         <a title="Dashboard"
                                                             href="{{ route('admin.dashboard') }}">Dashboard</a>
                                                     </li>
-													<li class="manu-item">
-														<a href="{{ route('logout') }}"
-															onclick="event.preventDefault(); document.getElementById('logout-form').submit();">logout</a>
-													</li>
-                                                    <form id="logout-form" method="POST" action="{{ route('logout') }}">
+                                                    <li class="manu-item">
+                                                        <a href="{{ route('logout') }}"
+                                                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">logout</a>
+                                                    </li>
+                                                    <form id="logout-form" method="POST"
+                                                        action="{{ route('logout') }}">
                                                         @csrf
-                                                        
+
                                                     </form>
 
                                                 </ul>
@@ -147,12 +148,13 @@
                                                             href="{{ route('user.dashboard') }}">Dashboard</a>
                                                     </li>
                                                     <li class="manu-item">
-														<a href="{{ route('logout') }}"
-															onclick="event.preventDefault(); document.getElementById('logout-form').submit();">logout</a>
-													</li>
-                                                    <form id="logout-form" method="POST" action="{{ route('logout') }}">
+                                                        <a href="{{ route('logout') }}"
+                                                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">logout</a>
+                                                    </li>
+                                                    <form id="logout-form" method="POST"
+                                                        action="{{ route('logout') }}">
                                                         @csrf
-                                                        
+
                                                     </form>
                                                 </ul>
                                             </li>

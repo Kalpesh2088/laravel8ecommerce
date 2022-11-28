@@ -25,6 +25,7 @@
                                     <th>Title</th>
                                     <th>Subtitle</th>
                                     <th>Price</th>
+                                    <th>Price</th>
                                     <th>Link</th>
                                     <th>Status</th>
                                     <th>Date</th>

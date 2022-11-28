@@ -1,5 +1,14 @@
 <!--main area-->
 <main id="main" class="main-site">
+    <style>
+        .regprice{
+            font-weight: 300;
+            font-size: 13px !important;
+            color: #aaaaaa !important;
+            text-decoration: line-through;
+            padding-left: 10px;
+        }
+    </style>
 
     <div class="container">
 
@@ -43,7 +52,14 @@
                         <div class="wrap-social">
                             <a class="link-socail" href="#"><img src="{{asset('assets/images/social-list.png')}}" alt=""></a>
                         </div>
+                        @if ($product->sale_pricee > 0 && $sale->status == 1 && $sale->sale_date > Carbon\Carbon::now())
+                        <div class="wrap-price"><span class="product-price">${{$Product->sale_price}}</span>
+                            <del><span class="product-price regprice">${{$Product->regular_price}}</span ></del>
+                        </div>
+                        @else
                         <div class="wrap-price"><span class="product-price">${{$Product->regular_price}}</span></div>
+                        @endif
+                        
                         <div class="stock-info in-stock">
                             <p class="availability">Availability: <b>{{$Product->stock_status}}</b></p>
                         </div>
@@ -57,7 +73,11 @@
                             </div>
                         </div>
                         <div class="wrap-butons">
+                            @if ($product->sale_pricee > 0 && $sale->status == 1 && $sale->sale_date > Carbon\Carbon::now())
+                            <a href="#" class="btn add-to-cart" wire:click.prevent="store({{$Product->id}},'{{$Product->name}}',{{$Product->sale_price}})">Add to Cart</a>
+                            @else
                             <a href="#" class="btn add-to-cart" wire:click.prevent="store({{$Product->id}},'{{$Product->name}}',{{$Product->regular_price}})">Add to Cart</a>
+                            @endif
                             <div class="wrap-btn">
                                 <a href="#" class="btn btn-compare">Add Compare</a>
                                 <a href="#" class="btn btn-wishlist">Add Wishlist</a>

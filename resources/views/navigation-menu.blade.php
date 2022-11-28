@@ -61,7 +61,7 @@
                                     </div>
 
                                     @foreach (Auth::user()->allTeams() as $team)
-                                        <x-jet-switchable-team :team="$team" />
+                                        <x-jet-switchable-team :team="$team" /> 
                                     @endforeach
                                 </div>
                             </x-slot>

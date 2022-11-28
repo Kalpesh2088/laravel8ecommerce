@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-
+use Auth;
 class AuthAdmin
 {
     /**
@@ -15,8 +15,8 @@ class AuthAdmin
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
     public function handle(Request $request, Closure $next)
-    {
-        if(session('utype')== 'ADM')
+    {   
+        if(Auth::user()->utype == 'ADM')
         {
             return $next($request);
         }
