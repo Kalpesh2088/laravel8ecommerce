@@ -23,12 +23,9 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/color-01.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"
-        integrity="sha512-CryKbMe7sjSCDPl18jtJI5DR5jtkUWxPXWaLCst6QjH8wxDexfRJic2WRmRXmstr2Y8SxDDWuBO6CQC6IE4KTA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/6.2.7/js/tempus-dominus.min.js"
-        integrity="sha512-mlRnmlg3QB5kUlkHt2TkijTp/aTaXzSufbKrfMD1xfRhyiTKxLVgvNxSTwju35XtSZNxGlQ8G+EgGnAd9zJlWg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/6.2.7/js/tempus-dominus.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.6.1/nouislider.min.css" />
     @livewireStyles
 </head>
 
@@ -193,7 +190,9 @@
                                     <a href="#" class="link-direction">
                                         <i class="fa fa-heart" aria-hidden="true"></i>
                                         <div class="left-info">
-                                            <span class="index">0 item</span>
+                                            @if(Cart::instance('Wishlist')->count() > 0)
+                                            <span class="index">{{Cart::instance('Wishlist')->count()}} item</span>
+                                            @endif
                                             <span class="title">Wishlist</span>
                                         </div>
                                     </a>
@@ -617,9 +616,11 @@
         <script src="{{ asset('assets/js/jquery.sticky.js') }}"></script>
         <script src="{{ asset('assets/js/functions.js') }}"></script>
         <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/6.2.7/js/tempus-dominus.js"
             integrity="sha512-V8ISAL8eGy+JL1tfkBk8miHoaGECx2XjyHsMWQReF9ITfHJgZI+iyHbFUZyx1j+qxt/HkHorPXsOtLUOarVceQ=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.6.1/nouislider.min.js"></script>
         @livewireScripts
         @stack('script')
     </body>
